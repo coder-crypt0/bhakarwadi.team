@@ -117,7 +117,7 @@ function handleInbox() {
     
     $db = getDB();
     // Note: database uses 'receiver_id' not 'recipient_id'
-    $stmt = $db->prepare("SELECT m.id, m.sender_id, u.username as sender_username, m.encrypted_content, m.message_type, m.file_url, m.timestamp as created_at, m.is_read FROM messages m JOIN users u ON m.sender_id = u.id WHERE m.receiver_id = ? ORDER BY m.timestamp DESC LIMIT ? OFFSET ?");
+    $stmt = $db->prepare("SELECT m.id, m.sender_id, u.username as sender_username, m.encrypted_content, m.message_type, m.file_url, m.timestamp as created_at, m.is_read, f.id as file_id, f.original_name as file_name, f.file_size FROM messages m JOIN users u ON m.sender_id = u.id LEFT JOIN files f ON m.file_id = f.id WHERE m.receiver_id = ? ORDER BY m.timestamp DESC LIMIT ? OFFSET ?");
     $stmt->execute([$user['user_id'], $limit, $offset]);
     $messages = $stmt->fetchAll();
     
@@ -144,7 +144,7 @@ function handleHistory() {
     $db = getDB();
     // Note: database uses 'receiver_id' not 'recipient_id'
     // ORDER BY ASC so oldest messages come first (client tracks lastDisplayedMessageId)
-    $stmt = $db->prepare("SELECT m.id, m.sender_id, m.receiver_id as recipient_id, u.username as sender_username, m.encrypted_content, m.message_type, m.file_url, m.timestamp as created_at, m.is_read FROM messages m JOIN users u ON m.sender_id = u.id WHERE (m.sender_id = ? AND m.receiver_id = ?) OR (m.sender_id = ? AND m.receiver_id = ?) ORDER BY m.timestamp ASC LIMIT ? OFFSET ?");
+    $stmt = $db->prepare("SELECT m.id, m.sender_id, m.receiver_id as recipient_id, u.username as sender_username, m.encrypted_content, m.message_type, m.file_url, m.timestamp as created_at, m.is_read, f.id as file_id, f.original_name as file_name, f.file_size FROM messages m JOIN users u ON m.sender_id = u.id LEFT JOIN files f ON m.file_id = f.id WHERE (m.sender_id = ? AND m.receiver_id = ?) OR (m.sender_id = ? AND m.receiver_id = ?) ORDER BY m.timestamp ASC LIMIT ? OFFSET ?");
     $stmt->execute([$user['user_id'], $contactId, $contactId, $user['user_id'], $limit, $offset]);
     $messages = $stmt->fetchAll();
     
