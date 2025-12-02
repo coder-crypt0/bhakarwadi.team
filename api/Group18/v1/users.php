@@ -124,9 +124,30 @@ function handleListContacts() {
     
     $db = getDB();
     // Note: database uses contact_id and is_blocked, not contact_user_id and status
-    $stmt = $db->prepare("SELECT c.id, c.contact_id as contact_user_id, u.username, u.email FROM contacts c JOIN users u ON c.contact_id = u.id WHERE c.user_id = ? AND c.is_blocked = 0 ORDER BY u.username");
+    // Calculate online status: user is online if last_active within last 30 seconds
+    $stmt = $db->prepare("
+        SELECT 
+            c.id, 
+            c.contact_id as contact_user_id, 
+            u.username, 
+            u.email,
+            u.last_active,
+            CASE 
+                WHEN u.last_active >= DATE_SUB(NOW(), INTERVAL 30 SECOND) THEN 1
+                ELSE 0
+            END as online
+        FROM contacts c 
+        JOIN users u ON c.contact_id = u.id 
+        WHERE c.user_id = ? AND c.is_blocked = 0 
+        ORDER BY u.username
+    ");
     $stmt->execute([$user['user_id']]);
     $contacts = $stmt->fetchAll();
+    
+    // Convert online to boolean for JSON
+    foreach ($contacts as &$contact) {
+        $contact['online'] = (bool)$contact['online'];
+    }
     
     sendJSON(['success' => true, 'contacts' => $contacts]);
 }
