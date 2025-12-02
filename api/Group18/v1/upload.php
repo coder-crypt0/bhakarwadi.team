@@ -2,9 +2,14 @@
 /**
  * File Upload/Download API
  * Endpoints: ?action=upload, ?action=download, ?action=info, ?action=delete, ?action=stream, ?action=view-once
+ * Uses Vercel Blob Storage for file storage
  */
 
 require_once 'config.php';
+
+// Vercel Blob Storage configuration
+define('VERCEL_BLOB_TOKEN', 'vercel_blob_rw_0AMT5iI6XxJ19D4B_VyBSR0E7Hx0t5sZ9R7XCAke3TtoiA3');
+define('VERCEL_BLOB_API', 'https://blob.vercel-storage.com');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -38,6 +43,96 @@ switch ($action) {
         break;
     default:
         sendJSON(['success' => false, 'error' => 'Endpoint not found'], 404);
+}
+
+/**
+ * Upload file to Vercel Blob Storage
+ */
+function uploadToBlob($filename, $fileData, $contentType) {
+    $url = VERCEL_BLOB_API . '/' . urlencode($filename);
+    
+    $headers = [
+        'Authorization: Bearer ' . VERCEL_BLOB_TOKEN,
+        'Content-Type: ' . $contentType,
+        'x-content-type: ' . $contentType,
+        'x-add-random-suffix: 1'
+    ];
+    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $fileData);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $error = curl_error($ch);
+    curl_close($ch);
+    
+    if ($error || $httpCode !== 200) {
+        error_log("Vercel Blob upload failed: $error - HTTP $httpCode - Response: $response");
+        return null;
+    }
+    
+    $result = json_decode($response, true);
+    return $result['url'] ?? null;
+}
+
+/**
+ * Download file from Vercel Blob Storage
+ */
+function downloadFromBlob($blobUrl) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $blobUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    
+    $fileData = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $error = curl_error($ch);
+    curl_close($ch);
+    
+    if ($error || $httpCode !== 200) {
+        error_log("Vercel Blob download failed: $error - HTTP $httpCode");
+        return null;
+    }
+    
+    return $fileData;
+}
+
+/**
+ * Delete file from Vercel Blob Storage
+ */
+function deleteFromBlob($blobUrl) {
+    $data = json_encode(['urls' => [$blobUrl]]);
+    
+    $headers = [
+        'Authorization: Bearer ' . VERCEL_BLOB_TOKEN,
+        'Content-Type: application/json'
+    ];
+    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, VERCEL_BLOB_API . '/delete');
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $error = curl_error($ch);
+    curl_close($ch);
+    
+    if ($error || $httpCode !== 200) {
+        error_log("Vercel Blob delete failed: $error - HTTP $httpCode");
+        return false;
+    }
+    
+    return true;
 }
 
 function handleUpload() {
@@ -80,40 +175,28 @@ function handleUpload() {
         }
     }
     
-    $uploadDir = UPLOAD_DIR . '/' . date('Y/m/d');
-    if (!file_exists($uploadDir)) {
-        if (!mkdir($uploadDir, 0755, true)) {
-            sendJSON(['success' => false, 'error' => 'Failed to create upload directory'], 500);
-        }
-    }
-    
-    if (!is_writable($uploadDir)) {
-        sendJSON(['success' => false, 'error' => 'Upload directory not writable'], 500);
-    }
-    
     // For encrypted files, hash the encrypted content; for normal files, hash the uploaded file
     if ($isEncrypted) {
         $fileHash = hash('sha256', $actualFileData);
+        $uploadData = $actualFileData;
     } else {
         $fileHash = hash_file('sha256', $tmpPath);
+        $uploadData = file_get_contents($tmpPath);
     }
-    $extension = pathinfo($originalName, PATHINFO_EXTENSION);
-    $storedName = $fileHash . ($extension ? '.' . $extension : '');
-    $storedPath = $uploadDir . '/' . $storedName;
     
-    if ($isEncrypted) {
-        if (file_put_contents($storedPath, $actualFileData) === false) {
-            sendJSON(['success' => false, 'error' => 'Failed to write file'], 500);
-        }
-    } else {
-        if (!move_uploaded_file($tmpPath, $storedPath)) {
-            sendJSON(['success' => false, 'error' => 'Failed to save file'], 500);
-        }
+    $extension = pathinfo($originalName, PATHINFO_EXTENSION);
+    $blobFilename = 'tornado/' . date('Y/m/d') . '/' . $fileHash . ($extension ? '.' . $extension : '');
+    
+    // Upload to Vercel Blob Storage
+    $blobUrl = uploadToBlob($blobFilename, $uploadData, $file['type']);
+    
+    if (!$blobUrl) {
+        sendJSON(['success' => false, 'error' => 'Failed to upload to storage'], 500);
     }
     
     $db = getDB();
     $stmt = $db->prepare("INSERT INTO files (user_id, filename, file_path, file_size, mime_type, upload_time) VALUES (?, ?, ?, ?, ?, NOW())");
-    $stmt->execute([$user['user_id'], $originalName, $storedPath, $fileSize, $file['type']]);
+    $stmt->execute([$user['user_id'], $originalName, $blobUrl, $fileSize, $file['type']]);
     $fileId = $db->lastInsertId();
     
     sendJSON(['success' => true, 'file_id' => $fileId, 'file_hash' => $fileHash]);
@@ -162,15 +245,18 @@ function handleDownload() {
         sendJSON(['success' => false, 'error' => 'Access denied'], 403);
     }
     
-    if (!file_exists($file['file_path'])) {
+    // Download from Vercel Blob Storage
+    $fileData = downloadFromBlob($file['file_path']);
+    
+    if ($fileData === null) {
         sendJSON(['success' => false, 'error' => 'File missing on server'], 404);
     }
     
     header('Content-Type: ' . $file['mime_type']);
-    header('Content-Length: ' . $file['file_size']);
+    header('Content-Length: ' . strlen($fileData));
     header('Content-Disposition: attachment; filename="' . $file['filename'] . '"');
     
-    readfile($file['file_path']);
+    echo $fileData;
     exit;
 }
 
@@ -217,13 +303,14 @@ function handleStream() {
         sendJSON(['success' => false, 'error' => 'Access denied'], 403);
     }
     
-    if (!file_exists($file['file_path'])) {
+    // Download from Vercel Blob Storage
+    $fileData = downloadFromBlob($file['file_path']);
+    
+    if ($fileData === null) {
         sendJSON(['success' => false, 'error' => 'File missing on server'], 404);
     }
     
-    $fp = fopen($file['file_path'], 'rb');
-    $fileSize = $file['file_size'];
-    $chunkSize = 1024 * 1024;
+    $fileSize = strlen($fileData);
     
     header('Content-Type: ' . $file['mime_type']);
     header('Content-Length: ' . $fileSize);
@@ -240,23 +327,11 @@ function handleStream() {
         header("Content-Range: bytes $start-$end/$fileSize");
         header('Content-Length: ' . ($end - $start + 1));
         
-        fseek($fp, $start);
-        $remaining = $end - $start + 1;
-        
-        while ($remaining > 0 && !feof($fp)) {
-            $read = min($chunkSize, $remaining);
-            echo fread($fp, $read);
-            $remaining -= $read;
-            flush();
-        }
+        echo substr($fileData, $start, $end - $start + 1);
     } else {
-        while (!feof($fp)) {
-            echo fread($fp, $chunkSize);
-            flush();
-        }
+        echo $fileData;
     }
     
-    fclose($fp);
     exit;
 }
 
@@ -298,9 +373,8 @@ function handleFileDelete() {
         sendJSON(['success' => false, 'error' => 'File not found or unauthorized'], 404);
     }
     
-    if (file_exists($file['file_path'])) {
-        unlink($file['file_path']);
-    }
+    // Delete from Vercel Blob Storage
+    deleteFromBlob($file['file_path']);
     
     $stmt = $db->prepare("DELETE FROM files WHERE id = ?");
     $stmt->execute([$fileId]);
@@ -330,21 +404,21 @@ function handleViewOnceUpload() {
         sendJSON(['success' => false, 'error' => 'Upload failed'], 400);
     }
     
-    $uploadDir = UPLOAD_DIR . '/viewonce/' . date('Y/m/d');
-    if (!file_exists($uploadDir)) {
-        mkdir($uploadDir, 0755, true);
-    }
-    
     $fileHash = hash_file('sha256', $tmpPath);
     $extension = pathinfo($originalName, PATHINFO_EXTENSION);
-    $storedName = $fileHash . ($extension ? '.' . $extension : '');
-    $storedPath = $uploadDir . '/' . $storedName;
+    $blobFilename = 'tornado/viewonce/' . date('Y/m/d') . '/' . $fileHash . ($extension ? '.' . $extension : '');
     
-    move_uploaded_file($tmpPath, $storedPath);
+    // Upload to Vercel Blob Storage
+    $fileData = file_get_contents($tmpPath);
+    $blobUrl = uploadToBlob($blobFilename, $fileData, $file['type']);
+    
+    if (!$blobUrl) {
+        sendJSON(['success' => false, 'error' => 'Failed to upload to storage'], 500);
+    }
     
     $db = getDB();
     $stmt = $db->prepare("INSERT INTO view_once_files (sender_id, recipient_id, original_name, stored_path, file_size, file_hash, mime_type, created_at, expires_at, is_viewed) VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), DATE_ADD(NOW(), INTERVAL 24 HOUR), 0)");
-    $stmt->execute([$user['user_id'], $recipientId, $originalName, $storedPath, $fileSize, $fileHash, $file['type']]);
+    $stmt->execute([$user['user_id'], $recipientId, $originalName, $blobUrl, $fileSize, $fileHash, $file['type']]);
     $fileId = $db->lastInsertId();
     
     sendJSON(['success' => true, 'file_id' => $fileId]);
@@ -375,7 +449,10 @@ function handleViewOnceDownload() {
         sendJSON(['success' => false, 'error' => 'File expired'], 410);
     }
     
-    if (!file_exists($file['stored_path'])) {
+    // Download from Vercel Blob Storage
+    $fileData = downloadFromBlob($file['stored_path']);
+    
+    if ($fileData === null) {
         sendJSON(['success' => false, 'error' => 'File missing on server'], 404);
     }
     
@@ -383,13 +460,14 @@ function handleViewOnceDownload() {
     $stmt->execute([$fileId]);
     
     header('Content-Type: ' . $file['mime_type']);
-    header('Content-Length: ' . $file['file_size']);
+    header('Content-Length: ' . strlen($fileData));
     header('Content-Disposition: inline; filename="' . $file['original_name'] . '"');
     header('X-View-Once: true');
     
-    readfile($file['stored_path']);
+    echo $fileData;
     
-    unlink($file['stored_path']);
+    // Delete from Vercel Blob Storage after viewing
+    deleteFromBlob($file['stored_path']);
     
     exit;
 }
