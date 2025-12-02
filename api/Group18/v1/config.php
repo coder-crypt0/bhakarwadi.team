@@ -1,7 +1,7 @@
 <?php
 /**
  * Database Configuration for Tornado Messenger
- * Hostinger MySQL Database
+ * Hostinger MySQL Database - Vercel Deployment
  */
 
 // Database Configuration
@@ -9,7 +9,7 @@ define('DB_HOST', 'tk6ejd.h.filess.io');
 define('DB_PORT', 61031);
 define('DB_NAME', 'tornado_ableworemy');
 define('DB_USER', 'tornado_ableworemy');
-define('DB_PASS', 'a10b796574e5640e9abfdf12b73b7f332b941af7'); // UPDATE THIS WITH ACTUAL PASSWORD
+define('DB_PASS', 'a10b796574e5640e9abfdf12b73b7f332b941af7');
 
 // API Configuration
 define('API_VERSION', 'v1');
@@ -24,7 +24,7 @@ define('UPLOAD_DIR', __DIR__ . '/../../uploads');
 define('ALLOWED_TYPES', ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'doc', 'docx', 'txt', 'zip']);
 
 // Email Configuration (for OTP)
-define('SENDMAIL_URL', 'https://thegroup11.com/api/sendmail.php');
+define('SENDMAIL_URL', 'https://bhakarwadi-team.vercel.app/api/Group18/v1/sendmail.php');
 define('SENDMAIL_API_KEY', 'dGhlZ3JvdXAxMQ==');
 
 /**
@@ -56,7 +56,7 @@ function sendJSON($data, $code = 200) {
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Auth-Token');
     echo json_encode($data);
     exit;
 }
@@ -69,15 +69,59 @@ function getBody() {
 }
 
 /**
- * Get Bearer token
+ * Get Bearer token with Vercel serverless fallbacks
  */
 function getToken() {
-    $headers = getallheaders();
-    if (isset($headers['Authorization'])) {
-        if (preg_match('/Bearer\s+(.+)/', $headers['Authorization'], $matches)) {
-            return $matches[1];
+    // Try getallheaders() first (traditional hosting)
+    if (function_exists('getallheaders')) {
+        $headers = getallheaders();
+        if (isset($headers['Authorization'])) {
+            if (preg_match('/Bearer\s+(.+)/', $headers['Authorization'], $matches)) {
+                return $matches[1];
+            }
+        }
+        if (isset($headers['X-Auth-Token'])) {
+            return $headers['X-Auth-Token'];
         }
     }
+    
+    // Fallback to $_SERVER for Vercel/serverless environments
+    if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
+        if (preg_match('/Bearer\s+(.+)/', $_SERVER['HTTP_AUTHORIZATION'], $matches)) {
+            return $matches[1];
+        }
+        return $_SERVER['HTTP_AUTHORIZATION'];
+    }
+    
+    // Apache/CGI redirected authorization
+    if (isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION'])) {
+        if (preg_match('/Bearer\s+(.+)/', $_SERVER['REDIRECT_HTTP_AUTHORIZATION'], $matches)) {
+            return $matches[1];
+        }
+        return $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
+    }
+    
+    // Custom X-Auth-Token header
+    if (isset($_SERVER['HTTP_X_AUTH_TOKEN'])) {
+        return $_SERVER['HTTP_X_AUTH_TOKEN'];
+    }
+    
+    // Query parameter fallback (for environments that strip all headers)
+    if (isset($_GET['token'])) {
+        return $_GET['token'];
+    }
+    
+    // POST parameter fallback
+    if (isset($_POST['token'])) {
+        return $_POST['token'];
+    }
+    
+    // JSON body fallback
+    $body = getBody();
+    if (isset($body['token'])) {
+        return $body['token'];
+    }
+    
     return null;
 }
 
