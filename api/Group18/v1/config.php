@@ -5,10 +5,10 @@
  */
 
 // Database Configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'u265056410_tornado');
-define('DB_USER', 'u265056410_tornado');
-define('DB_PASS', 'TORnado@12345'); // UPDATE THIS WITH ACTUAL PASSWORD
+define('DB_HOST', 'tk6ejd.h.filess.io');
+define('DB_NAME', 'tornado_ableworemy');
+define('DB_USER', 'tornado_ableworemy');
+define('DB_PASS', 'a10b796574e5640e9abfdf12b73b7f332b941af7'); // UPDATE THIS WITH ACTUAL PASSWORD
 
 // API Configuration
 define('API_VERSION', 'v1');
@@ -239,3 +239,4 @@ function generateOTP() {
 function clean($str) {
     return htmlspecialchars(strip_tags(trim($str)), ENT_QUOTES, 'UTF-8');
 }
+
