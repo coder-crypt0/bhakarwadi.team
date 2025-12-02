@@ -2,19 +2,17 @@
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.3.0"
+    },
+    "API/**/*.php": {
+      "runtime": "vercel-php@0.3.0"
     }
   },
   "routes": [
-    // Serve static assets directly (do not proxy /css or /js to the PHP function)
     { "src": "/css/(.*)", "dest": "/css/$1" },
     { "src": "/js/(.*)",  "dest": "/js/$1" },
 
-    // If you have API PHP files under /API that you want to serve as endpoints,
-    // map them to the API folder (optional). If /API contains php endpoints,
-    // either move them under /api or rewrite routes accordingly.
     { "src": "/API/(.*)", "dest": "/API/$1" },
 
-    // Route everything else to the php function adapter
     { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
