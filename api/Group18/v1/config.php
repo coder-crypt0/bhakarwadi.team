@@ -6,6 +6,7 @@
 
 // Database Configuration
 define('DB_HOST', 'tk6ejd.h.filess.io');
+define('DB_PORT', 61031);
 define('DB_NAME', 'tornado_ableworemy');
 define('DB_USER', 'tornado_ableworemy');
 define('DB_PASS', 'a10b796574e5640e9abfdf12b73b7f332b941af7'); // UPDATE THIS WITH ACTUAL PASSWORD
@@ -33,7 +34,7 @@ function getDB() {
     static $pdo = null;
     if ($pdo === null) {
         try {
-            $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
+            $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4";
             $pdo = new PDO($dsn, DB_USER, DB_PASS, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -239,4 +240,3 @@ function generateOTP() {
 function clean($str) {
     return htmlspecialchars(strip_tags(trim($str)), ENT_QUOTES, 'UTF-8');
 }
-
