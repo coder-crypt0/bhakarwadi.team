@@ -1,0 +1,7 @@
+POST / HTTP/1.1
+Host: clik-inyu.onrender.com
+User-Agent: INJECT_HERE
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 34
+
+username=dev_access&password=test

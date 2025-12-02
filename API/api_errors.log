@@ -1,0 +1,571 @@
+[11-Feb-2025 20:22:01 UTC] API Request received
+[11-Feb-2025 20:22:01 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[11-Feb-2025 20:22:01 UTC] Attempting database connection...
+[11-Feb-2025 20:22:01 UTC] Database connected successfully
+[11-Feb-2025 20:22:01 UTC] Method: GET, Action: search_trains
+[11-Feb-2025 20:22:01 UTC] Searching trains from NDLS to MAS
+[11-Feb-2025 20:22:01 UTC] Error occurred: Stations table does not exist
+[11-Feb-2025 20:22:01 UTC] Stack trace: #0 {main}
+[11-Feb-2025 20:22:04 UTC] API Request received
+[11-Feb-2025 20:22:04 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[11-Feb-2025 20:22:04 UTC] Attempting database connection...
+[11-Feb-2025 20:22:04 UTC] Database connected successfully
+[11-Feb-2025 20:22:04 UTC] Method: GET, Action: search_trains
+[11-Feb-2025 20:22:04 UTC] Searching trains from NDLS to MAS
+[11-Feb-2025 20:22:04 UTC] Error occurred: Stations table does not exist
+[11-Feb-2025 20:22:04 UTC] Stack trace: #0 {main}
+[11-Feb-2025 20:22:05 UTC] API Request received
+[11-Feb-2025 20:22:05 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[11-Feb-2025 20:22:05 UTC] Attempting database connection...
+[11-Feb-2025 20:22:05 UTC] Database connected successfully
+[11-Feb-2025 20:22:05 UTC] Method: GET, Action: search_trains
+[11-Feb-2025 20:22:05 UTC] Searching trains from NDLS to MAS
+[11-Feb-2025 20:22:06 UTC] Error occurred: Stations table does not exist
+[11-Feb-2025 20:22:06 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:44:30 UTC] API Request received
+[12-Feb-2025 06:44:30 UTC] GET /api/irctc
+[12-Feb-2025 06:44:30 UTC] Attempting database connection...
+[12-Feb-2025 06:44:30 UTC] Database connected successfully
+[12-Feb-2025 06:44:30 UTC] Method: GET, Action: 
+[12-Feb-2025 06:44:30 UTC] Error occurred: Invalid action specified
+[12-Feb-2025 06:44:30 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:45:16 UTC] API Request received
+[12-Feb-2025 06:45:16 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 06:45:16 UTC] Attempting database connection...
+[12-Feb-2025 06:45:16 UTC] Database connected successfully
+[12-Feb-2025 06:45:16 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 06:45:16 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 06:45:16 UTC] Error occurred: Stations table does not exist
+[12-Feb-2025 06:45:16 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:45:26 UTC] API Request received
+[12-Feb-2025 06:45:26 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 06:45:26 UTC] Attempting database connection...
+[12-Feb-2025 06:45:26 UTC] Database connected successfully
+[12-Feb-2025 06:45:26 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 06:45:26 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 06:45:26 UTC] Error occurred: Stations table does not exist
+[12-Feb-2025 06:45:26 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:45:32 UTC] API Request received
+[12-Feb-2025 06:45:32 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 06:45:32 UTC] Attempting database connection...
+[12-Feb-2025 06:45:32 UTC] Database connected successfully
+[12-Feb-2025 06:45:32 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 06:45:32 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 06:45:32 UTC] Error occurred: Stations table does not exist
+[12-Feb-2025 06:45:32 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:45:34 UTC] API Request received
+[12-Feb-2025 06:45:34 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 06:45:34 UTC] Attempting database connection...
+[12-Feb-2025 06:45:34 UTC] Database connected successfully
+[12-Feb-2025 06:45:34 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 06:45:34 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 06:45:34 UTC] Error occurred: Stations table does not exist
+[12-Feb-2025 06:45:34 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:49:03 UTC] API Request received
+[12-Feb-2025 06:49:03 UTC] GET /api/irctc.php
+[12-Feb-2025 06:49:03 UTC] Attempting database connection...
+[12-Feb-2025 06:49:03 UTC] Database connected successfully
+[12-Feb-2025 06:49:03 UTC] Method: GET, Action: 
+[12-Feb-2025 06:49:03 UTC] Error occurred: Invalid action specified
+[12-Feb-2025 06:49:03 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:52:01 UTC] API Request received
+[12-Feb-2025 06:52:01 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 06:52:01 UTC] Attempting database connection...
+[12-Feb-2025 06:52:01 UTC] Database connected successfully
+[12-Feb-2025 06:52:01 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 06:52:01 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 06:52:01 UTC] Error occurred: Stations table does not exist
+[12-Feb-2025 06:52:01 UTC] Stack trace: #0 {main}
+[12-Feb-2025 06:58:12 UTC] API Request received
+[12-Feb-2025 06:58:12 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 06:58:12 UTC] Attempting database connection...
+[12-Feb-2025 06:58:12 UTC] Database connected successfully
+[12-Feb-2025 06:58:12 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 06:58:12 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 06:58:12 UTC] Error occurred: Stations table does not exist
+[12-Feb-2025 06:58:12 UTC] Stack trace: #0 {main}
+[12-Feb-2025 07:02:52 UTC] API Request received
+[12-Feb-2025 07:02:52 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 07:02:52 UTC] Attempting database connection...
+[12-Feb-2025 07:02:52 UTC] Database connected successfully
+[12-Feb-2025 07:02:52 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 07:02:52 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 07:02:52 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 07:02:52 UTC] Found 2 trains
+[12-Feb-2025 07:03:40 UTC] API Request received
+[12-Feb-2025 07:03:40 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 07:03:40 UTC] Attempting database connection...
+[12-Feb-2025 07:03:40 UTC] Database connected successfully
+[12-Feb-2025 07:03:40 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 07:03:40 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 07:03:40 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 07:03:40 UTC] Found 2 trains
+[12-Feb-2025 07:06:02 UTC] API Request received
+[12-Feb-2025 07:06:02 UTC] GET /api/irctc?action=search_trains&source=
+[12-Feb-2025 07:06:02 UTC] Attempting database connection...
+[12-Feb-2025 07:06:02 UTC] Database connected successfully
+[12-Feb-2025 07:06:02 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 07:06:02 UTC] PHP Warning:  Undefined array key "destination" in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 42
+[12-Feb-2025 07:06:02 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 42
+[12-Feb-2025 07:06:02 UTC] Searching trains from  to 
+[12-Feb-2025 07:06:02 UTC] Error occurred: One or both station codes not found
+[12-Feb-2025 07:06:02 UTC] Stack trace: #0 {main}
+[12-Feb-2025 07:13:08 UTC] API Request received
+[12-Feb-2025 07:13:08 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 07:13:08 UTC] Attempting database connection...
+[12-Feb-2025 07:13:08 UTC] Database connected successfully
+[12-Feb-2025 07:13:08 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 07:13:08 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 07:13:08 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 07:13:08 UTC] Found 2 trains
+[12-Feb-2025 07:43:09 UTC] API Request received
+[12-Feb-2025 07:43:09 UTC] GET /api/irctc?action=get_stations&term=NDLS
+[12-Feb-2025 07:43:09 UTC] Attempting database connection...
+[12-Feb-2025 07:43:09 UTC] Database connected successfully
+[12-Feb-2025 07:43:09 UTC] Method: GET, Action: get_stations
+[12-Feb-2025 07:43:09 UTC] Error occurred: Invalid action specified
+[12-Feb-2025 07:43:09 UTC] Stack trace: #0 {main}
+[12-Feb-2025 07:43:31 UTC] API Request received
+[12-Feb-2025 07:43:31 UTC] POST /api/irctc?action=login
+[12-Feb-2025 07:43:31 UTC] Attempting database connection...
+[12-Feb-2025 07:43:31 UTC] Database connected successfully
+[12-Feb-2025 07:43:31 UTC] Method: POST, Action: login
+[12-Feb-2025 07:43:31 UTC] Error occurred: Invalid action specified
+[12-Feb-2025 07:43:31 UTC] Stack trace: #0 {main}
+[12-Feb-2025 07:44:44 UTC] API Request received
+[12-Feb-2025 07:44:44 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 07:44:44 UTC] Attempting database connection...
+[12-Feb-2025 07:44:44 UTC] Database connected successfully
+[12-Feb-2025 07:44:44 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 07:44:44 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 07:44:44 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 07:44:44 UTC] Found 2 trains
+[12-Feb-2025 07:53:53 UTC] API Request received
+[12-Feb-2025 07:53:53 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 07:53:53 UTC] Attempting database connection...
+[12-Feb-2025 07:53:53 UTC] Database connected successfully
+[12-Feb-2025 07:53:53 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 07:53:53 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 07:53:53 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 07:53:53 UTC] Found 2 trains
+[12-Feb-2025 08:20:33 UTC] API Request received
+[12-Feb-2025 08:20:33 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:20:33 UTC] Attempting database connection...
+[12-Feb-2025 08:20:33 UTC] Database connected successfully
+[12-Feb-2025 08:20:33 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:20:33 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:20:33 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:20:33 UTC] Found 2 trains
+[12-Feb-2025 08:21:41 UTC] API Request received
+[12-Feb-2025 08:21:41 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:21:41 UTC] Attempting database connection...
+[12-Feb-2025 08:21:41 UTC] Database connected successfully
+[12-Feb-2025 08:21:41 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:21:41 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:21:41 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:21:41 UTC] Found 2 trains
+[12-Feb-2025 08:34:47 UTC] API Request received
+[12-Feb-2025 08:34:47 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:34:47 UTC] Attempting database connection...
+[12-Feb-2025 08:34:47 UTC] Database connected successfully
+[12-Feb-2025 08:34:47 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:34:47 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:34:47 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:34:47 UTC] Found 1 trains
+[12-Feb-2025 08:40:06 UTC] API Request received
+[12-Feb-2025 08:40:06 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:40:06 UTC] Attempting database connection...
+[12-Feb-2025 08:40:06 UTC] Database connected successfully
+[12-Feb-2025 08:40:06 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:40:06 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:40:06 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:40:06 UTC] Found 1 trains
+[12-Feb-2025 08:42:03 UTC] API Request received
+[12-Feb-2025 08:42:03 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:42:03 UTC] Attempting database connection...
+[12-Feb-2025 08:42:03 UTC] Database connected successfully
+[12-Feb-2025 08:42:03 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:42:03 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:42:03 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:42:03 UTC] Found 1 trains
+[12-Feb-2025 08:43:24 UTC] API Request received
+[12-Feb-2025 08:43:24 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:43:24 UTC] Attempting database connection...
+[12-Feb-2025 08:43:24 UTC] Database connected successfully
+[12-Feb-2025 08:43:24 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:43:24 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:43:24 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:43:24 UTC] Found 1 trains
+[12-Feb-2025 08:45:10 UTC] API Request received
+[12-Feb-2025 08:45:10 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:45:10 UTC] Attempting database connection...
+[12-Feb-2025 08:45:10 UTC] Database connected successfully
+[12-Feb-2025 08:45:10 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:45:10 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:45:10 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:45:10 UTC] Found 1 trains
+[12-Feb-2025 08:46:25 UTC] API Request received
+[12-Feb-2025 08:46:25 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:46:25 UTC] Attempting database connection...
+[12-Feb-2025 08:46:25 UTC] Database connected successfully
+[12-Feb-2025 08:46:25 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:46:25 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:46:25 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:46:25 UTC] Found 1 trains
+[12-Feb-2025 08:48:19 UTC] API Request received
+[12-Feb-2025 08:48:19 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 08:48:19 UTC] Attempting database connection...
+[12-Feb-2025 08:48:19 UTC] Database connected successfully
+[12-Feb-2025 08:48:19 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 08:48:19 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 08:48:19 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 08:48:19 UTC] Found 1 trains
+[12-Feb-2025 08:55:47 UTC] API Request received
+[12-Feb-2025 08:55:47 UTC] GET /api/irctc?action=check_booking&pnr=PNR2782569
+[12-Feb-2025 08:55:47 UTC] Attempting database connection...
+[12-Feb-2025 08:55:47 UTC] Database connected successfully
+[12-Feb-2025 08:55:47 UTC] Method: GET, Action: check_booking
+[12-Feb-2025 08:59:24 UTC] API Request received
+[12-Feb-2025 08:59:24 UTC] GET /api/irctc?action=check_booking&pnr=PNR2782569
+[12-Feb-2025 08:59:24 UTC] Attempting database connection...
+[12-Feb-2025 08:59:24 UTC] Database connected successfully
+[12-Feb-2025 08:59:24 UTC] Method: GET, Action: check_booking
+[12-Feb-2025 09:23:21 UTC] API Request received
+[12-Feb-2025 09:23:21 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[12-Feb-2025 09:23:21 UTC] Attempting database connection...
+[12-Feb-2025 09:23:21 UTC] Database connected successfully
+[12-Feb-2025 09:23:21 UTC] Method: GET, Action: search_trains
+[12-Feb-2025 09:23:21 UTC] Searching trains from NDLS to MAS
+[12-Feb-2025 09:23:21 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[12-Feb-2025 09:23:21 UTC] Found 1 trains
+[12-Feb-2025 09:23:49 UTC] API Request received
+[12-Feb-2025 09:23:49 UTC] GET /api/irctc?action=check_booking&pnr=PNR2782569
+[12-Feb-2025 09:23:49 UTC] Attempting database connection...
+[12-Feb-2025 09:23:49 UTC] Database connected successfully
+[12-Feb-2025 09:23:49 UTC] Method: GET, Action: check_booking
+[02-Mar-2025 19:18:43 UTC] API Request received
+[02-Mar-2025 19:18:43 UTC] GET /api/irctc?action=create_booking
+[02-Mar-2025 19:18:43 UTC] Attempting database connection...
+[02-Mar-2025 19:18:43 UTC] Database connected successfully
+[02-Mar-2025 19:18:43 UTC] Method: GET, Action: create_booking
+[02-Mar-2025 19:18:43 UTC] PHP Warning:  Undefined array key "train_id" in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 163
+[02-Mar-2025 19:18:43 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 163
+[02-Mar-2025 19:18:43 UTC] PHP Warning:  Undefined array key "name" in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 164
+[02-Mar-2025 19:18:43 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 164
+[02-Mar-2025 19:18:43 UTC] PHP Warning:  Undefined array key "mobile" in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 165
+[02-Mar-2025 19:18:43 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 165
+[02-Mar-2025 19:18:43 UTC] PHP Warning:  Undefined array key "email" in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 166
+[02-Mar-2025 19:18:43 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 166
+[02-Mar-2025 19:18:43 UTC] PHP Warning:  Undefined array key "class_type" in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 167
+[02-Mar-2025 19:18:43 UTC] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 167
+[02-Mar-2025 19:18:43 UTC] PHP Warning:  Undefined array key "num_tickets" in /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php on line 168
+[02-Mar-2025 19:18:43 UTC] Error occurred: Unknown column 'passenger_name' in 'INSERT INTO'
+[02-Mar-2025 19:18:43 UTC] Stack trace: #0 /home/u265056410/domains/thegroup11.com/public_html/api/irctc.php(179): mysqli_query()
+#1 {main}
+[05-Aug-2025 03:58:23 UTC] API Request received
+[05-Aug-2025 03:58:23 UTC] GET /api/irctc?action=check_booking&pnr=1
+[05-Aug-2025 03:58:23 UTC] Attempting database connection...
+[05-Aug-2025 03:58:23 UTC] Database connected successfully
+[05-Aug-2025 03:58:23 UTC] Method: GET, Action: check_booking
+[05-Aug-2025 03:58:56 UTC] API Request received
+[05-Aug-2025 03:58:56 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[05-Aug-2025 03:58:56 UTC] Attempting database connection...
+[05-Aug-2025 03:58:56 UTC] Database connected successfully
+[05-Aug-2025 03:58:56 UTC] Method: GET, Action: search_trains
+[05-Aug-2025 03:58:56 UTC] Searching trains from NDLS to MAS
+[05-Aug-2025 03:58:56 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[05-Aug-2025 03:58:56 UTC] Found 1 trains
+[05-Aug-2025 04:01:34 UTC] API Request received
+[05-Aug-2025 04:01:34 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[05-Aug-2025 04:01:34 UTC] Attempting database connection...
+[05-Aug-2025 04:01:34 UTC] Database connected successfully
+[05-Aug-2025 04:01:34 UTC] Method: GET, Action: search_trains
+[05-Aug-2025 04:01:34 UTC] Searching trains from NDLS to MAS
+[05-Aug-2025 04:01:34 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[05-Aug-2025 04:01:34 UTC] Found 1 trains
+[05-Aug-2025 04:01:55 UTC] API Request received
+[05-Aug-2025 04:01:55 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[05-Aug-2025 04:01:55 UTC] Attempting database connection...
+[05-Aug-2025 04:01:55 UTC] Database connected successfully
+[05-Aug-2025 04:01:55 UTC] Method: GET, Action: search_trains
+[05-Aug-2025 04:01:55 UTC] Searching trains from NDLS to MAS
+[05-Aug-2025 04:01:55 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[05-Aug-2025 04:01:55 UTC] Found 1 trains
+[05-Aug-2025 04:08:40 UTC] API Request received
+[05-Aug-2025 04:08:40 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[05-Aug-2025 04:08:40 UTC] Attempting database connection...
+[05-Aug-2025 04:08:40 UTC] Database connected successfully
+[05-Aug-2025 04:08:40 UTC] Method: GET, Action: search_trains
+[05-Aug-2025 04:08:40 UTC] Searching trains from NDLS to MAS
+[05-Aug-2025 04:08:40 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[05-Aug-2025 04:08:40 UTC] Found 1 trains
+[05-Aug-2025 04:08:57 UTC] API Request received
+[05-Aug-2025 04:08:57 UTC] GET /api/irctc?action=check_booking&pnr=PNR6720663
+[05-Aug-2025 04:08:57 UTC] Attempting database connection...
+[05-Aug-2025 04:08:57 UTC] Database connected successfully
+[05-Aug-2025 04:08:57 UTC] Method: GET, Action: check_booking
+[05-Aug-2025 04:15:05 UTC] API Request received
+[05-Aug-2025 04:15:05 UTC] GET /api/irctc?action=search_trains&source=NDLS&destination=MAS
+[05-Aug-2025 04:15:05 UTC] Attempting database connection...
+[05-Aug-2025 04:15:05 UTC] Database connected successfully
+[05-Aug-2025 04:15:05 UTC] Method: GET, Action: search_trains
+[05-Aug-2025 04:15:05 UTC] Searching trains from NDLS to MAS
+[05-Aug-2025 04:15:05 UTC] Executing query: SELECT t.*, 
+                s1.station_name as source_name, 
+                s1.station_code as source_code,
+                s2.station_name as dest_name, 
+                s2.station_code as dest_code,
+                t.available_ac1,
+                t.available_ac2,
+                t.available_sl,
+                t.fare_ac1,
+                t.fare_ac2,
+                t.fare_sl
+                FROM trains t
+                INNER JOIN stations s1 ON t.source = s1.station_name
+                INNER JOIN stations s2 ON t.destination = s2.station_name
+                WHERE s1.station_code = 'NDLS' 
+                AND s2.station_code = 'MAS'
+[05-Aug-2025 04:15:05 UTC] Found 1 trains
+[05-Aug-2025 04:15:52 UTC] API Request received
+[05-Aug-2025 04:15:52 UTC] GET /api/irctc?action=check_booking&pnr=PNR6720663
+[05-Aug-2025 04:15:52 UTC] Attempting database connection...
+[05-Aug-2025 04:15:52 UTC] Database connected successfully
+[05-Aug-2025 04:15:52 UTC] Method: GET, Action: check_booking
