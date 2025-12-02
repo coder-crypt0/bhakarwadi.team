@@ -176,6 +176,16 @@ function requireAuth() {
         sendJSON(['success' => false, 'error' => 'Invalid token'], 401);
     }
     
+    // Update last_active timestamp for online status tracking
+    try {
+        $db = getDB();
+        $stmt = $db->prepare("UPDATE users SET last_active = NOW() WHERE id = ?");
+        $stmt->execute([$user['user_id']]);
+    } catch (Exception $e) {
+        // Don't fail auth if update fails - just log it
+        error_log("Failed to update last_active: " . $e->getMessage());
+    }
+    
     return $user;
 }
 
